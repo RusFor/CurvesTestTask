@@ -7,17 +7,23 @@
 #endif
 
 #include "Curve.h"
-#include "cmath"
+
+namespace curve {
 
 class CURVELIBRARY_API Circle : public Curve {
 public:
-	Circle(double radius)
-		: radius_(std::abs(radius)) {};
+	Circle(double radius);
+
 	virtual Point3D GetPoint3D(double phi) const override;
+
 	virtual Vector3D GetVector3D(double phi) const override;
-	virtual bool IsCircle() const override;
-	double GetRadius() const override;
+
+	virtual Type GetType() const override;
+
+	double GetRadius() const;
+
 private:
 	double radius_;
 };
+}
 

@@ -23,7 +23,7 @@ else()
 endif()
 
 add_executable(${PROJECT_NAME}
-	main.cpp
+	example/main.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC "${CURVES_DLL_DIR}/lib/")

@@ -7,20 +7,23 @@
 #endif
 
 #include "Curve.h"
-#include "cmath"
+
+namespace curve {
 
 class CURVELIBRARY_API Ellipse : public Curve {
 public:
-	Ellipse(double radius_x,double radius_y) 
-		: radius_x_(std::abs(radius_x)) 
-		, radius_y_(std::abs(radius_y)){}
+
+	Ellipse(double radius_x, double radius_y);
+
 	Point3D GetPoint3D(double phi) const override;
+
 	Vector3D GetVector3D(double phi) const override;
-	bool IsCircle() const override;
-	double GetRadius() const override;
+
+	Type GetType() const override;
+
 private:
 	double radius_x_;
 	double radius_y_;
-	
 };
+}
 
